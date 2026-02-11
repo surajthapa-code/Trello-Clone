@@ -1,0 +1,102 @@
+/* Base Styles */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #0079bf; /* Trello blue */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+#Header {
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+#Logo-Name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+/* Horizontal Board Layout */
+#MainContainer {
+    display: flex;
+    padding: 10px;
+    align-items: flex-start; /* Keeps lists at top */
+    overflow-x: auto;       /* Allows horizontal scrolling for many lists */
+    flex-grow: 1;
+}
+
+/* The List (Column) */
+.List {
+    background-color: #ebecf0;
+    width: 272px;
+    border-radius: 3px;
+    margin-right: 10px;
+    padding: 10px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.ListHeading {
+    padding: 5px 8px;
+    font-weight: 600;
+    color: #172b4d;
+}
+
+/* Card List Styling */
+.CardList {
+    list-style-type: none; /* Removes bullets */
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual Card Styling */
+.CardList li {
+    background-color: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+    cursor: pointer;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    color: #172b4d;
+    transition: background-color 0.1s ease;
+}
+
+.CardList li:hover {
+    background-color: #f4f5f7; /* Subtle hover gray */
+}
+
+/* "+ Add a Card" Button Styling */
+.AddNewCard {
+    color: #5e6c84;
+    padding: 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.AddNewCard:hover {
+    background-color: rgba(9, 30, 66, 0.08);
+    color: #172b4d;
+}
+
+/* "+ Add another list" Sidebar button */
+#NewList {
+    background-color: rgba(255, 255, 255, 0.24);
+    color: white;
+    width: 272px;
+    padding: 12px;
+    border-radius: 3px;
+    margin: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    position: absolute; /* Keeps it separate from horizontal lists */
+    right: 10px;
+}
