@@ -25,7 +25,7 @@ function InputDisable(Event) {
 }
 
 /* ---------------------------------------------------------
-   3. Function: tempInp4CardL
+   3. Function: tempInp4CardL (Temporary Input for card list)
    Main logic for adding a new card:
    - Creates a temporary input field for typing the name.
    - On "Enter", converts that text into a permanent <li> card.
