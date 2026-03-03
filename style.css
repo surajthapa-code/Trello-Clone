@@ -1,102 +1,281 @@
-/* Base Styles */
-body {
+/* =========================
+   GLOBAL
+========================= */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: #0079bf; /* Trello blue */
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
-/* Header */
+body {
+    background: #0079bf;
+    min-height: 100vh;
+}
+
+/* =========================
+   HEADER
+========================= */
 #Header {
-    background-color: rgba(0, 0, 0, 0.15);
-    padding: 8px 16px;
+    background: rgba(0, 0, 0, 0.15);
+    color: white;
+    padding: 12px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    backdrop-filter: blur(6px);
+}
+
+#Header div {
     display: flex;
     align-items: center;
-    color: white;
+    gap: 10px;
 }
 
-#Logo-Name {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-right: 10px;
-}
-
-/* Horizontal Board Layout */
+/* =========================
+   MAIN CONTAINER
+========================= */
 #MainContainer {
     display: flex;
-    padding: 10px;
-    align-items: flex-start; /* Keeps lists at top */
-    overflow-x: auto;       /* Allows horizontal scrolling for many lists */
-    flex-grow: 1;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    overflow-x: auto;
+    height: calc(100vh - 70px);
 }
 
-/* The List (Column) */
+/* =========================
+   LIST
+========================= */
 .List {
-    background-color: #ebecf0;
-    width: 272px;
-    border-radius: 3px;
-    margin-right: 10px;
-    padding: 10px;
-    max-height: 90vh;
+    background: #ebecf0;
+    width: 270px;
+    min-width: 270px;
+    border-radius: 12px;
+    padding: 12px;
     display: flex;
     flex-direction: column;
+    max-height: 100%;
 }
 
+/* =========================
+   LIST HEADING
+========================= */
 .ListHeading {
-    padding: 5px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-weight: 600;
-    color: #172b4d;
+    margin-bottom: 10px;
+    position: relative;
 }
 
-/* Card List Styling */
-.CardList {
-    list-style-type: none; /* Removes bullets */
-    padding: 0;
-    margin: 0;
-}
-
-/* Individual Card Styling */
-.CardList li {
-    background-color: #ffffff;
-    border-radius: 3px;
-    box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+.ListHeading i {
     cursor: pointer;
-    margin-bottom: 8px;
-    padding: 8px 12px;
-    color: #172b4d;
-    transition: background-color 0.1s ease;
+    padding: 5px;
+    border-radius: 6px;
 }
 
-.CardList li:hover {
-    background-color: #f4f5f7; /* Subtle hover gray */
+.ListHeading i:hover {
+    background: rgba(0,0,0,0.1);
 }
 
-/* "+ Add a Card" Button Styling */
+/* =========================
+   LIST BODY
+========================= */
+.ListBody {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 0 rgba(9,30,66,.25);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.card:hover {
+    background: #f4f5f7;
+}
+
+/* =========================
+   ADD NEW CARD
+========================= */
 .AddNewCard {
-    color: #5e6c84;
+    margin-top: 8px;
     padding: 8px;
-    border-radius: 3px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    color: #5e6c84;
+    transition: 0.2s;
 }
 
 .AddNewCard:hover {
-    background-color: rgba(9, 30, 66, 0.08);
-    color: #172b4d;
+    background: rgba(0,0,0,0.08);
 }
 
-/* "+ Add another list" Sidebar button */
+/* =========================
+   NEW LIST BUTTON
+========================= */
 #NewList {
-    background-color: rgba(255, 255, 255, 0.24);
-    color: white;
-    width: 272px;
+    min-width: 270px;
+    height: fit-content;
     padding: 12px;
-    border-radius: 3px;
-    margin: 10px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.25);
+    color: white;
+    font-weight: 500;
     cursor: pointer;
-    white-space: nowrap;
-    position: absolute; /* Keeps it separate from horizontal lists */
-    right: 10px;
+    transition: 0.2s;
+}
+
+#NewList:hover {
+    background: rgba(255,255,255,0.35);
+}
+
+/* =========================
+   INPUT FIELDS
+========================= */
+input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 2px solid #0079bf;
+    outline: none;
+    margin-bottom: 8px;
+}
+
+/* =========================
+   DONE BUTTON
+========================= */
+.doneBtn {
+    margin-top: 5px;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    background: #0079bf;
+    color: white;
+    cursor: pointer;
+}
+
+.doneBtn:hover {
+    background: #026aa7;
+}
+
+/* =========================
+   DROPDOWN MENU
+========================= */
+.dropdown {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    padding: 6px 0;
+    width: 120px;
+    z-index: 100;
+}
+
+.dropdown div {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.dropdown div:hover {
+    background: #f4f5f7;
+}
+
+/* Card layout *//* Card layout */
+.card {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 0 rgba(9,30,66,.25);
+    margin-bottom: 8px;
+    position: relative;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Card content layout */
+.cardContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+/* Card text wraps properly */
+.cardText {
+    flex: 1;
+    white-space: pre-wrap;
+}
+
+/* Card 3 dot */
+.cardMenuIcon {
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 6px;
+}
+
+.cardMenuIcon:hover {
+    background: rgba(0,0,0,0.1);
+}
+
+/* Dropdown */
+.cardDropdown {
+    position: absolute;
+    top: 30px;
+    right: 5px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    width: 120px;
+    z-index: 100;
+}
+
+.cardDropdown div {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.cardDropdown div:hover {
+    background: #f4f5f7;
+}
+
+/* Textarea */
+.cardInput,
+.editCardInput {
+    width: 100%;
+    resize: none;
+    border-radius: 8px;
+    padding: 8px;
+    border: 2px solid #0079bf;
+    outline: none;
+}
+
+/* Done button */
+.doneEditCard {
+    margin-top: 6px;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    background: #0079bf;
+    color: white;
+    cursor: pointer;
+}
+
+.doneEditCard:hover {
+    background: #026aa7;
 }

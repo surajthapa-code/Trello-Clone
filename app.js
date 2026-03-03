@@ -3,7 +3,7 @@
    Storing references to HTML elements to use them later.
 --------------------------------------------------------- */
 const MainContainer    = document.getElementById("MainContainer");
-const CardList         = document.querySelector(".CardList");
+const CardList         = document.querySelectorAll(".CardList");
 const NewCardBtn       = document.querySelectorAll(".AddNewCard");
 const ListHeading      = document.getElementsByClassName("ListHeading");
 const ListHeadingText  = document.querySelectorAll(".ListHeadingText");

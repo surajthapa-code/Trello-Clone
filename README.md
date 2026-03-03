@@ -13,3 +13,6 @@ took help from ai for adding comments and organising my code didnt let him chang
 
 lets talk about the project so today i decided to re write my whole js again, because when i analysed my code i got to know i had multiple errors while handeilng multiple lists cards (when clicking 2nd lists add card btn list 1 was responding), and code was all messy i didnt even knew wht was hapenning there, 
 so i decided to write again in a simple way, But this time i was also writing in copy...
+
+3-3-2026 randomly got idea to create funtions for diff elements like we do in react and the project is ready 
+craete-read-edit-delete
